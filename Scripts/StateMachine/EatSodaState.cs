@@ -1,12 +1,10 @@
 using Godot;
-using System;
-using System.Collections.Generic;
 
-public partial class EatSodaState : State
+public partial class EatSodaState : EatenState
 {
 	public override void StateStart()
     {
+        base.StateStart();
         GD.Print("Eaten Soda");
-        rootNode.GetNode<Sprite2D>("Sprite2D").Visible = false;
     }
 }
