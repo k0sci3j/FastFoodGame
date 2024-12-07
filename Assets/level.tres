@@ -1,0 +1,12 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://dmwwjw33j1to3"]
+
+[ext_resource type="Texture2D" uid="uid://cshhh7t66g6e7" path="res://Assets/fastfood_background.png" id="1_ydmmo"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7yrq0"]
+texture = ExtResource("1_ydmmo")
+0:0/0 = 0
+1:0/0 = 0
+
+[resource]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_7yrq0")

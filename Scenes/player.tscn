@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://cpeilr6h1l4tk"]
+
+[ext_resource type="Script" path="res://Scripts/Player.cs" id="1_2e4a2"]
+[ext_resource type="Texture2D" uid="uid://u0rx5jnfdy5" path="res://Assets/atari_player.png" id="2_4d5yw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cngo4"]
+atlas = ExtResource("2_4d5yw")
+region = Rect2(0, 1, 21, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddrcf"]
+atlas = ExtResource("2_4d5yw")
+region = Rect2(21, 1, 21, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3igq"]
+atlas = ExtResource("2_4d5yw")
+region = Rect2(42, 1, 21, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4ylr"]
+atlas = ExtResource("2_4d5yw")
+region = Rect2(63, 1, 21, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4vlww"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cngo4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddrcf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3igq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4ylr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y0p6o"]
+radius = 11.0
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 2
+motion_mode = 1
+script = ExtResource("1_2e4a2")
+
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4vlww")
+autoplay = "default"
+frame_progress = 0.913109
+metadata/_edit_group_ = true
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 0)
+shape = SubResource("CircleShape2D_y0p6o")

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dy5iqwfb21a7i"]
+
+[ext_resource type="Texture2D" uid="uid://x7kadgxfr1qa" path="res://Assets/atari_mob.png" id="1_gbksd"]
+[ext_resource type="PackedScene" uid="uid://k7wykg5rfb21" path="res://Scenes/points_zone.tscn" id="2_xjrxr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tnalm"]
+size = Vector2(17, 15)
+
+[node name="MobCheeseburger" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_gbksd")
+region_enabled = true
+region_rect = Rect2(173.695, 8.8229, 16.8272, 14.4991)
+
+[node name="PointsZone" parent="." instance=ExtResource("2_xjrxr")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PointsZone"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_tnalm")

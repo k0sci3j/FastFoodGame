@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c12wqw3u4owpx"]
+
+[ext_resource type="Texture2D" uid="uid://x7kadgxfr1qa" path="res://Assets/atari_mob.png" id="1_osfgb"]
+[ext_resource type="PackedScene" uid="uid://k7wykg5rfb21" path="res://Scenes/points_zone.tscn" id="2_tgkvl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8l7i"]
+size = Vector2(16, 18)
+
+[node name="MobBeer" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_osfgb")
+region_enabled = true
+region_rect = Rect2(65.7361, 5.76533, 16.5899, 18.449)
+
+[node name="PointsZone" parent="." instance=ExtResource("2_tgkvl")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PointsZone"]
+shape = SubResource("RectangleShape2D_v8l7i")

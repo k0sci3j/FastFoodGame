@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dd4e3w3wuuca"]
+
+[ext_resource type="Texture2D" uid="uid://x7kadgxfr1qa" path="res://Assets/atari_mob.png" id="1_iwwlv"]
+[ext_resource type="PackedScene" uid="uid://k7wykg5rfb21" path="res://Scenes/points_zone.tscn" id="2_q3gut"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tf73k"]
+size = Vector2(10, 21)
+
+[node name="MobIcecream" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_iwwlv")
+region_enabled = true
+region_rect = Rect2(217.154, 4.40151, 11.5362, 20.803)
+
+[node name="PointsZone" parent="." instance=ExtResource("2_q3gut")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PointsZone"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_tf73k")
