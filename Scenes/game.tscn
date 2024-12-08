@@ -8,7 +8,7 @@
 
 [node name="Level" parent="." instance=ExtResource("1_mnvtn")]
 
-[node name="MobScene" parent="." instance=ExtResource("4_tnnbf")]
-
 [node name="Player" parent="." instance=ExtResource("2_bjnjl")]
 position = Vector2(576, 256)
+
+[node name="MobScene" parent="." instance=ExtResource("4_tnnbf")]
