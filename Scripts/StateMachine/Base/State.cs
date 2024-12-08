@@ -9,11 +9,11 @@ public partial class State : Node
 	[Signal]
 	public delegate void StateEndedEventHandler();
 	public StateMachine fsm;
-	public Node rootNode;
+	public Node RootNode;
     public override void _Ready()
     {
         base._Ready();
-		rootNode = GetParent<StateMachine>().rootNode;
+		RootNode = GetParent<StateMachine>().RootNode;
     }
     public virtual void StateStart()
 	{

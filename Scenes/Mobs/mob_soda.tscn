@@ -20,10 +20,10 @@ region_rect = Rect2(109.757, 1.70081, 14.5829, 26.4198)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EatZone"]
 shape = SubResource("RectangleShape2D_ki6sq")
 
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("rootNode")]
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("RootNode")]
 script = ExtResource("2_j1mbi")
-initialState = NodePath("MoveState")
-rootNode = NodePath("..")
+InitialState = NodePath("MoveState")
+RootNode = NodePath("..")
 
 [node name="MoveState" type="Node" parent="StateMachine"]
 script = ExtResource("3_q34kc")

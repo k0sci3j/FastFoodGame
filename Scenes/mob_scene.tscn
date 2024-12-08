@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://bc2gnbw6c73ll"]
+
+[ext_resource type="Script" path="res://Scripts/MobScene.cs" id="1_e3mlg"]
+[ext_resource type="Script" path="res://Scripts/StateMachine/Base/StateMachine.cs" id="2_vslwg"]
+[ext_resource type="Script" path="res://Scripts/StateMachine/MobScene/MobSceneIdleState.cs" id="3_cgrov"]
+[ext_resource type="PackedScene" uid="uid://d3fim2djo5the" path="res://Scenes/Mobs/mob_soda.tscn" id="3_xb3go"]
+[ext_resource type="PackedScene" uid="uid://dy5ekbnxtpcvp" path="res://Scenes/Mobs/mob_hot_dog.tscn" id="4_sonc8"]
+
+[sub_resource type="Curve2D" id="Curve2D_m3kmk"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 72, 0, 0, 0, 0, 0, 472)
+}
+point_count = 2
+
+[node name="MobScene" type="Node"]
+script = ExtResource("1_e3mlg")
+MobScenes = Array[PackedScene]([ExtResource("4_sonc8"), ExtResource("3_xb3go")])
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("RootNode")]
+script = ExtResource("2_vslwg")
+InitialState = NodePath("Idle")
+RootNode = NodePath("..")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("3_cgrov")
+
+[node name="SpawnMob" type="Node" parent="StateMachine"]
+
+[node name="MobPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_m3kmk")
+
+[node name="MobSpawnPath" type="PathFollow2D" parent="MobPath"]
+position = Vector2(0, 72)
+rotation = 1.5708
+
+[connection signal="timeout" from="Timer" to="StateMachine/Idle" method="OnMobSceneTimerTrigger"]

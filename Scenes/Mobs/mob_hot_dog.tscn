@@ -15,10 +15,10 @@ texture = ExtResource("1_x2bkt")
 region_enabled = true
 region_rect = Rect2(129.402, 10.7056, 17.1538, 7.75897)
 
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("rootNode")]
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("RootNode")]
 script = ExtResource("3_07jj2")
-initialState = NodePath("MoveState")
-rootNode = NodePath("..")
+InitialState = NodePath("MoveState")
+RootNode = NodePath("..")
 
 [node name="MoveState" type="Node" parent="StateMachine"]
 script = ExtResource("4_m3sns")

@@ -4,9 +4,9 @@ using System.Collections.Generic;
 public partial class StateMachine : Node
 {
     [Export]
-    public NodePath initialState;
+    public NodePath InitialState {get; set;}
     [Export]
-    public Node rootNode;
+    public Node RootNode {get; set;}
     private Dictionary<string, State> _states;
     private State _lastState;
     private State _currentState;
@@ -23,7 +23,7 @@ public partial class StateMachine : Node
                 s.StateEnd();
             }
         }
-        _currentState = GetNode<State>(initialState);
+        _currentState = GetNode<State>(InitialState);
         _currentState.StateStart();
     }
 

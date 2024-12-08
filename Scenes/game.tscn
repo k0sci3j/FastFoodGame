@@ -1,31 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8tl65u1lsrbn"]
+[gd_scene load_steps=4 format=3 uid="uid://b8tl65u1lsrbn"]
 
 [ext_resource type="PackedScene" uid="uid://ddj3ah4b3p32d" path="res://Scenes/level.tscn" id="1_mnvtn"]
 [ext_resource type="PackedScene" uid="uid://cpeilr6h1l4tk" path="res://Scenes/player.tscn" id="2_bjnjl"]
-[ext_resource type="PackedScene" uid="uid://dy5ekbnxtpcvp" path="res://Scenes/Mobs/mob_hot_dog.tscn" id="3_at13k"]
-[ext_resource type="PackedScene" uid="uid://d3fim2djo5the" path="res://Scenes/Mobs/mob_soda.tscn" id="4_sktj7"]
+[ext_resource type="PackedScene" uid="uid://bc2gnbw6c73ll" path="res://Scenes/mob_scene.tscn" id="4_tnnbf"]
 
 [node name="Game" type="Node2D"]
 
 [node name="Level" parent="." instance=ExtResource("1_mnvtn")]
-metadata/_edit_group_ = true
+
+[node name="MobScene" parent="." instance=ExtResource("4_tnnbf")]
 
 [node name="Player" parent="." instance=ExtResource("2_bjnjl")]
 position = Vector2(576, 256)
-
-[node name="Mobs" type="Node" parent="."]
-
-[node name="MobHotDog" parent="Mobs" instance=ExtResource("3_at13k")]
-position = Vector2(464, 256)
-
-[node name="MobHotDog" parent="." instance=ExtResource("3_at13k")]
-position = Vector2(404, 257)
-
-[node name="MobHotDog2" parent="." instance=ExtResource("3_at13k")]
-position = Vector2(344, 256)
-
-[node name="MobHotDog3" parent="." instance=ExtResource("3_at13k")]
-position = Vector2(284, 256)
-
-[node name="MobSoda" parent="." instance=ExtResource("4_sktj7")]
-position = Vector2(220, 253)
