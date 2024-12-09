@@ -1,19 +1,41 @@
-[gd_scene load_steps=4 format=3 uid="uid://c12wqw3u4owpx"]
+[gd_scene load_steps=7 format=3 uid="uid://c12wqw3u4owpx"]
 
+[ext_resource type="Script" path="res://Scripts/Mob.cs" id="1_caiki"]
 [ext_resource type="Texture2D" uid="uid://x7kadgxfr1qa" path="res://Assets/atari_mob.png" id="1_osfgb"]
-[ext_resource type="PackedScene" uid="uid://k7wykg5rfb21" path="res://Scenes/points_zone.tscn" id="2_tgkvl"]
+[ext_resource type="Script" path="res://Scripts/StateMachine/Base/StateMachine.cs" id="4_mo8rc"]
+[ext_resource type="Script" path="res://Scripts/StateMachine/Base/MoveState.cs" id="5_w0td4"]
+[ext_resource type="Script" path="res://Scripts/StateMachine/EatBeerState.cs" id="6_ltnid"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8l7i"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uwc2u"]
 size = Vector2(16, 18)
 
 [node name="MobBeer" type="Node2D"]
+script = ExtResource("1_caiki")
+Speed = 50.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_osfgb")
 region_enabled = true
 region_rect = Rect2(65.7361, 5.76533, 16.5899, 18.449)
 
-[node name="PointsZone" parent="." instance=ExtResource("2_tgkvl")]
+[node name="EatZone" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PointsZone"]
-shape = SubResource("RectangleShape2D_v8l7i")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EatZone"]
+shape = SubResource("RectangleShape2D_uwc2u")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("RootNode")]
+script = ExtResource("4_mo8rc")
+InitialState = NodePath("MoveState")
+RootNode = NodePath("..")
+
+[node name="MoveState" type="Node" parent="StateMachine"]
+script = ExtResource("5_w0td4")
+
+[node name="EatenState" type="Node" parent="StateMachine"]
+script = ExtResource("6_ltnid")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(0, -8.9407e-08)
+scale = Vector2(0.8, 0.9)
+
+[connection signal="body_entered" from="EatZone" to="StateMachine/MoveState" method="OnEatZoneBodyEntered"]
