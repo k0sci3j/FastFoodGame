@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dy5ekbnxtpcvp"]
+[gd_scene load_steps=7 format=3 uid="uid://dy5ekbnxtpcvp"]
 
+[ext_resource type="Script" path="res://Scripts/Mob.cs" id="1_u6ybc"]
 [ext_resource type="Texture2D" uid="uid://x7kadgxfr1qa" path="res://Assets/atari_mob.png" id="1_x2bkt"]
 [ext_resource type="Script" path="res://Scripts/StateMachine/Base/StateMachine.cs" id="3_07jj2"]
 [ext_resource type="Script" path="res://Scripts/StateMachine/EatHotDogState.cs" id="4_g0t1v"]
@@ -9,6 +10,8 @@
 size = Vector2(16, 8)
 
 [node name="MobHotDog" type="Node2D"]
+script = ExtResource("1_u6ybc")
+Speed = 40.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_x2bkt")
@@ -30,5 +33,9 @@ script = ExtResource("4_g0t1v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EatZone"]
 shape = SubResource("RectangleShape2D_jilpo")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(0, -2.38419e-07)
+scale = Vector2(0.8, 0.4)
 
 [connection signal="body_entered" from="EatZone" to="StateMachine/MoveState" method="OnEatZoneBodyEntered"]

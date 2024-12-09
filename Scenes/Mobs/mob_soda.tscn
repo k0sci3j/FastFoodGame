@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://d3fim2djo5the"]
+[gd_scene load_steps=7 format=3 uid="uid://d3fim2djo5the"]
 
 [ext_resource type="Texture2D" uid="uid://x7kadgxfr1qa" path="res://Assets/atari_mob.png" id="1_inlvo"]
+[ext_resource type="Script" path="res://Scripts/Mob.cs" id="1_mu6c1"]
 [ext_resource type="Script" path="res://Scripts/StateMachine/Base/StateMachine.cs" id="2_j1mbi"]
 [ext_resource type="Script" path="res://Scripts/StateMachine/Base/MoveState.cs" id="3_q34kc"]
 [ext_resource type="Script" path="res://Scripts/StateMachine/EatSodaState.cs" id="4_hvy6n"]
@@ -9,6 +10,8 @@
 size = Vector2(14, 26)
 
 [node name="MobSoda" type="Node2D"]
+script = ExtResource("1_mu6c1")
+Speed = 60.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_inlvo")
@@ -30,5 +33,9 @@ script = ExtResource("3_q34kc")
 
 [node name="EatenState" type="Node" parent="StateMachine"]
 script = ExtResource("4_hvy6n")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(7.15256e-07, -1.19209e-07)
+scale = Vector2(0.7, 1.3)
 
 [connection signal="body_entered" from="EatZone" to="StateMachine/MoveState" method="OnEatZoneBodyEntered"]

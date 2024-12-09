@@ -2,10 +2,10 @@ using Godot;
 
 public partial class MoveState : State
 {
-    public override void StateStart()
+    public override void PhysicsUpdate(float delta)
     {
-        GD.Print("Mob Move Start");
-        ((Node2D)RootNode).Visible = false;
+        Vector2 velocity = new Vector2(1,0);
+        ((Mob)RootNode).Translate(velocity.Normalized() * (((Mob)RootNode).Speed/10));
     }
     private void OnEatZoneBodyEntered(CharacterBody2D body)
     {
