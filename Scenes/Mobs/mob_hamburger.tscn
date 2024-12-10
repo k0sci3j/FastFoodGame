@@ -1,20 +1,42 @@
-[gd_scene load_steps=4 format=3 uid="uid://caar4nntq8lpf"]
+[gd_scene load_steps=7 format=3 uid="uid://caar4nntq8lpf"]
 
 [ext_resource type="Texture2D" uid="uid://x7kadgxfr1qa" path="res://Assets/atari_mob.png" id="1_id5mx"]
-[ext_resource type="PackedScene" uid="uid://k7wykg5rfb21" path="res://Scenes/points_zone.tscn" id="2_uj64p"]
+[ext_resource type="Script" path="res://Scripts/Mob.cs" id="1_o61i1"]
+[ext_resource type="Script" path="res://Scripts/StateMachine/Base/StateMachine.cs" id="3_2o67b"]
+[ext_resource type="Script" path="res://Scripts/StateMachine/Base/MoveState.cs" id="4_wouvf"]
+[ext_resource type="Script" path="res://Scripts/StateMachine/EatCHamburgerState.cs" id="5_bswhv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0dsv"]
 size = Vector2(17, 12)
 
 [node name="MobHamburger" type="Node2D"]
+script = ExtResource("1_o61i1")
+Speed = 50.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_id5mx")
 region_enabled = true
 region_rect = Rect2(151.407, 9.75985, 16.8803, 11.4101)
 
-[node name="PointsZone" parent="." instance=ExtResource("2_uj64p")]
+[node name="EatZone" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PointsZone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EatZone"]
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_k0dsv")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("RootNode")]
+script = ExtResource("3_2o67b")
+InitialState = NodePath("MoveState")
+RootNode = NodePath("..")
+
+[node name="MoveState" type="Node" parent="StateMachine"]
+script = ExtResource("4_wouvf")
+
+[node name="EatenState" type="Node" parent="StateMachine"]
+script = ExtResource("5_bswhv")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(0.5, 0)
+scale = Vector2(0.85, 0.6)
+
+[connection signal="body_entered" from="EatZone" to="StateMachine/MoveState" method="OnEatZoneBodyEntered"]

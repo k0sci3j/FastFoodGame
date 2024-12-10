@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bc2gnbw6c73ll"]
+[gd_scene load_steps=19 format=3 uid="uid://bc2gnbw6c73ll"]
 
 [ext_resource type="Script" path="res://Scripts/MobScene.cs" id="1_e3mlg"]
 [ext_resource type="Script" path="res://Scripts/StateMachine/Base/StateMachine.cs" id="2_vslwg"]
@@ -6,11 +6,22 @@
 [ext_resource type="PackedScene" uid="uid://d3fim2djo5the" path="res://Scenes/Mobs/mob_soda.tscn" id="3_xb3go"]
 [ext_resource type="PackedScene" uid="uid://c12wqw3u4owpx" path="res://Scenes/Mobs/mob_beer.tscn" id="4_c01kl"]
 [ext_resource type="PackedScene" uid="uid://dy5ekbnxtpcvp" path="res://Scenes/Mobs/mob_hot_dog.tscn" id="4_sonc8"]
+[ext_resource type="PackedScene" uid="uid://dy5iqwfb21a7i" path="res://Scenes/Mobs/mob_cheeseburger.tscn" id="5_cpeta"]
 [ext_resource type="Script" path="res://Scripts/StateMachine/MobScene/MobSceneSpawnState.cs" id="6_r4g80"]
+[ext_resource type="PackedScene" uid="uid://qsekubp1j6vb" path="res://Scenes/Mobs/mob_cola.tscn" id="6_xcdjr"]
+[ext_resource type="PackedScene" uid="uid://vpdsx31e6u1l" path="res://Scenes/Mobs/mob_fries.tscn" id="7_td5hg"]
+[ext_resource type="PackedScene" uid="uid://8wdnpkuqi6lv" path="res://Scenes/Mobs/mob_green_sausage.tscn" id="8_qmv7f"]
+[ext_resource type="PackedScene" uid="uid://caar4nntq8lpf" path="res://Scenes/Mobs/mob_hamburger.tscn" id="9_0kg0h"]
+[ext_resource type="PackedScene" uid="uid://dd4e3w3wuuca" path="res://Scenes/Mobs/mob_icecream.tscn" id="10_wedp3"]
+[ext_resource type="PackedScene" uid="uid://8yt3rgjkqvwq" path="res://Scenes/Mobs/mob_pink_sausage.tscn" id="11_2v1it"]
+[ext_resource type="PackedScene" uid="uid://dx1rd0tvvu5so" path="res://Scenes/Mobs/mob_pizza.tscn" id="12_sothd"]
+[ext_resource type="PackedScene" uid="uid://cf4oi5j1eogsd" path="res://Scenes/Mobs/mob_shake.tscn" id="13_sj0h2"]
+[ext_resource type="PackedScene" uid="uid://bubj336yhaqtx" path="res://Scenes/Mobs/mob_violet_sausage.tscn" id="14_2pn76"]
+[ext_resource type="PackedScene" uid="uid://ce2rsd6guw0av" path="res://Scenes/Mobs/mob_waffle_icecream.tscn" id="15_rie63"]
 
 [node name="MobScene" type="Node"]
 script = ExtResource("1_e3mlg")
-MobScenes = Array[PackedScene]([ExtResource("4_sonc8"), ExtResource("3_xb3go"), ExtResource("4_c01kl")])
+MobScenes = Array[PackedScene]([ExtResource("4_sonc8"), ExtResource("3_xb3go"), ExtResource("4_c01kl"), ExtResource("5_cpeta"), ExtResource("6_xcdjr"), ExtResource("7_td5hg"), ExtResource("8_qmv7f"), ExtResource("9_0kg0h"), ExtResource("10_wedp3"), ExtResource("11_2v1it"), ExtResource("12_sothd"), ExtResource("13_sj0h2"), ExtResource("14_2pn76"), ExtResource("15_rie63")])
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("RootNode")]
 script = ExtResource("2_vslwg")
@@ -21,7 +32,7 @@ RootNode = NodePath("..")
 script = ExtResource("3_cgrov")
 
 [node name="Timer" type="Timer" parent="StateMachine/Idle"]
-wait_time = 2.0
+wait_time = 0.5
 one_shot = true
 
 [node name="Spawn" type="Node" parent="StateMachine"]

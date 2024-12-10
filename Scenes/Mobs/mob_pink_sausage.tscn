@@ -1,21 +1,43 @@
-[gd_scene load_steps=4 format=3 uid="uid://8yt3rgjkqvwq"]
+[gd_scene load_steps=7 format=3 uid="uid://8yt3rgjkqvwq"]
 
+[ext_resource type="Script" path="res://Scripts/Mob.cs" id="1_c021i"]
 [ext_resource type="Texture2D" uid="uid://x7kadgxfr1qa" path="res://Assets/atari_mob.png" id="1_mjs7h"]
-[ext_resource type="PackedScene" uid="uid://k7wykg5rfb21" path="res://Scenes/points_zone.tscn" id="2_vrr7r"]
+[ext_resource type="Script" path="res://Scripts/StateMachine/Base/StateMachine.cs" id="3_onthm"]
+[ext_resource type="Script" path="res://Scripts/StateMachine/Base/MoveState.cs" id="4_s7avy"]
+[ext_resource type="Script" path="res://Scripts/StateMachine/EatPinkSausageState.cs" id="5_m07tv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7hglm"]
 radius = 6.69239
 height = 20.5847
 
 [node name="MobPinkSausage" type="Node2D"]
+script = ExtResource("1_c021i")
+Speed = 50.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_mjs7h")
 region_enabled = true
 region_rect = Rect2(21.66, 6.71061, 16.8279, 16.4632)
 
-[node name="PointsZone" parent="." instance=ExtResource("2_vrr7r")]
+[node name="EatZone" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PointsZone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EatZone"]
 rotation = 0.532325
 shape = SubResource("CapsuleShape2D_7hglm")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("RootNode")]
+script = ExtResource("3_onthm")
+InitialState = NodePath("MoveState")
+RootNode = NodePath("..")
+
+[node name="MoveState" type="Node" parent="StateMachine"]
+script = ExtResource("4_s7avy")
+
+[node name="EatenState" type="Node" parent="StateMachine"]
+script = ExtResource("5_m07tv")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(8.9407e-08, 0)
+scale = Vector2(0.9, 1)
+
+[connection signal="body_entered" from="EatZone" to="StateMachine/MoveState" method="OnEatZoneBodyEntered"]

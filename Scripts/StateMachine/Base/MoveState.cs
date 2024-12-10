@@ -5,7 +5,7 @@ public partial class MoveState : State
     public override void PhysicsUpdate(float delta)
     {
         Vector2 velocity = new Vector2(1,0);
-        ((Mob)RootNode).Translate(velocity.Normalized() * (((Mob)RootNode).Speed/10));
+        ((Mob)RootNode).Translate(velocity * (((Mob)RootNode).Speed/10));
     }
     private void OnEatZoneBodyEntered(CharacterBody2D body)
     {

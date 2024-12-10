@@ -1,22 +1,44 @@
-[gd_scene load_steps=4 format=3 uid="uid://8wdnpkuqi6lv"]
+[gd_scene load_steps=7 format=3 uid="uid://8wdnpkuqi6lv"]
 
 [ext_resource type="Texture2D" uid="uid://x7kadgxfr1qa" path="res://Assets/atari_mob.png" id="1_ndgw4"]
-[ext_resource type="PackedScene" uid="uid://k7wykg5rfb21" path="res://Scenes/points_zone.tscn" id="2_p5rbe"]
+[ext_resource type="Script" path="res://Scripts/Mob.cs" id="1_xea3x"]
+[ext_resource type="Script" path="res://Scripts/StateMachine/Base/StateMachine.cs" id="3_yjmoh"]
+[ext_resource type="Script" path="res://Scripts/StateMachine/Base/MoveState.cs" id="4_i0qej"]
+[ext_resource type="Script" path="res://Scripts/StateMachine/EatGreenSausageState.cs" id="5_hb8ho"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xk1r2"]
 radius = 6.40272
 height = 21.2488
 
 [node name="MobGreenSausage" type="Node2D"]
+script = ExtResource("1_xea3x")
+Speed = 50.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_ndgw4")
 region_enabled = true
 region_rect = Rect2(43.2154, 6.55114, 17.7519, 16.7811)
 
-[node name="PointsZone" parent="." instance=ExtResource("2_p5rbe")]
+[node name="EatZone" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PointsZone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EatZone"]
 position = Vector2(0, 1)
 rotation = 0.685914
 shape = SubResource("CapsuleShape2D_xk1r2")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("RootNode")]
+script = ExtResource("3_yjmoh")
+InitialState = NodePath("MoveState")
+RootNode = NodePath("..")
+
+[node name="MoveState" type="Node" parent="StateMachine"]
+script = ExtResource("4_i0qej")
+
+[node name="EatenState" type="Node" parent="StateMachine"]
+script = ExtResource("5_hb8ho")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(0, 0.5)
+scale = Vector2(1, 1.05)
+
+[connection signal="body_entered" from="EatZone" to="StateMachine/MoveState" method="OnEatZoneBodyEntered"]

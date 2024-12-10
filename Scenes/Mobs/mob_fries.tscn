@@ -1,20 +1,42 @@
-[gd_scene load_steps=4 format=3 uid="uid://vpdsx31e6u1l"]
+[gd_scene load_steps=7 format=3 uid="uid://vpdsx31e6u1l"]
 
 [ext_resource type="Texture2D" uid="uid://x7kadgxfr1qa" path="res://Assets/atari_mob.png" id="1_gs24t"]
-[ext_resource type="PackedScene" uid="uid://k7wykg5rfb21" path="res://Scenes/points_zone.tscn" id="2_ntqsv"]
+[ext_resource type="Script" path="res://Scripts/Mob.cs" id="1_wgd5g"]
+[ext_resource type="Script" path="res://Scripts/StateMachine/Base/StateMachine.cs" id="3_bnmnh"]
+[ext_resource type="Script" path="res://Scripts/StateMachine/Base/MoveState.cs" id="4_u20yg"]
+[ext_resource type="Script" path="res://Scripts/StateMachine/EatFriesState.cs" id="5_77n6o"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fbey6"]
-size = Vector2(17, 27)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3ufx"]
+size = Vector2(20, 27)
 
 [node name="MobFries" type="Node2D"]
+script = ExtResource("1_wgd5g")
+Speed = 50.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_gs24t")
 region_enabled = true
 region_rect = Rect2(253.164, 2.37232, 17.255, 26.6277)
 
-[node name="PointsZone" parent="." instance=ExtResource("2_ntqsv")]
+[node name="EatZone" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PointsZone"]
-position = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_fbey6")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EatZone"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_p3ufx")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("RootNode")]
+script = ExtResource("3_bnmnh")
+InitialState = NodePath("MoveState")
+RootNode = NodePath("..")
+
+[node name="MoveState" type="Node" parent="StateMachine"]
+script = ExtResource("4_u20yg")
+
+[node name="EatenState" type="Node" parent="StateMachine"]
+script = ExtResource("5_77n6o")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(0, 0.5)
+scale = Vector2(1, 1.35)
+
+[connection signal="body_entered" from="EatZone" to="StateMachine/MoveState" method="OnEatZoneBodyEntered"]
