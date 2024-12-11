@@ -6,6 +6,7 @@ public partial class EatBeerState : EatenState
 	public override void StateStart()
     {
         base.StateStart();
-        GD.Print("Eaten Hot Dog");
+        RootNode.GetParent<MobScene>().Points+=3;
+        GD.Print("Eaten Beer: "+RootNode.GetParent<MobScene>().Points);
     }
 }

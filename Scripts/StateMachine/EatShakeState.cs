@@ -6,6 +6,7 @@ public partial class EatShakeState : EatenState
 	public override void StateStart()
     {
         base.StateStart();
-        GD.Print("Eaten Shake");
+        RootNode.GetParent<MobScene>().Points+=7;
+        GD.Print("Eaten Shake: "+RootNode.GetParent<MobScene>().Points);
     }
 }

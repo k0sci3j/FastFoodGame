@@ -6,6 +6,7 @@ public partial class EatIcecreamState : EatenState
 	public override void StateStart()
     {
         base.StateStart();
-        GD.Print("Eaten Icecream");
+        RootNode.GetParent<MobScene>().Points+=7;
+        GD.Print("Eaten Icecream: "+RootNode.GetParent<MobScene>().Points);
     }
 }

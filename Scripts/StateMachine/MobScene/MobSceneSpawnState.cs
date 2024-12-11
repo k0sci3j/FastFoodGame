@@ -12,7 +12,7 @@ public partial class MobSceneSpawnState : State
       Vector2 position = new Vector2(0, GD.Randi() % m1.Y + m0.Y);
       Node2D mob = mobScene.Instantiate<Node2D>();
       mob.Position = position;
-      AddChild(mob);
+      RootNode.AddChild(mob);
       fsm.ChangeTo("Idle");
     }
 }
