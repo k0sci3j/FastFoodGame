@@ -7,6 +7,5 @@ public partial class EatGreenSausageState : EatenState
     {
         base.StateStart();
         RootNode.GetParent<MobScene>().Points+=1;
-        GD.Print("Eaten Green Sausage: "+RootNode.GetParent<MobScene>().Points);
     }
 }

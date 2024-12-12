@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=4 uid="uid://ddj3ah4b3p32d"]
+[gd_scene load_steps=7 format=4 uid="uid://ddj3ah4b3p32d"]
 
 [ext_resource type="TileSet" uid="uid://dmwwjw33j1to3" path="res://Assets/level.tres" id="1_j8qke"]
+[ext_resource type="Script" path="res://Scripts/PointsLabel.cs" id="2_pbpw3"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_t1cff"]
 a = Vector2(0, 34)
@@ -48,3 +49,12 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
 position = Vector2(640, 0)
 shape = SubResource("SegmentShape2D_wy6pr")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 320.0
+offset_top = 8.0
+offset_right = 512.0
+offset_bottom = 40.0
+bbcode_enabled = true
+autowrap_mode = 0
+script = ExtResource("2_pbpw3")

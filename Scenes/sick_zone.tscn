@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dque6l10rx1es"]
-
-[ext_resource type="Script" path="res://Scripts/SickZone.cs" id="1_b0kjc"]
-
-[node name="SickZone" type="Area2D"]
-script = ExtResource("1_b0kjc")
-
-[connection signal="body_entered" from="." to="." method="OnBodyEntered"]

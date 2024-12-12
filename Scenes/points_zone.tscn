@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://k7wykg5rfb21"]
-
-[ext_resource type="Script" path="res://Scripts/PointsZone.cs" id="1_0eix4"]
-
-[node name="PointsZone" type="Area2D"]
-script = ExtResource("1_0eix4")
-
-[connection signal="body_entered" from="." to="." method="OnBodyEntered"]
