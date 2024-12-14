@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://ddj3ah4b3p32d"]
+[gd_scene load_steps=9 format=4 uid="uid://ddj3ah4b3p32d"]
 
+[ext_resource type="Script" path="res://Scripts/Points.cs" id="1_5bswj"]
 [ext_resource type="TileSet" uid="uid://dmwwjw33j1to3" path="res://Assets/level.tres" id="1_j8qke"]
-[ext_resource type="Script" path="res://Scripts/PointsLabel.cs" id="2_pbpw3"]
+[ext_resource type="FontFile" uid="uid://cia1rdumge1h3" path="res://Assets/Retroscape.ttf" id="2_qtmtf"]
+[ext_resource type="Texture2D" uid="uid://x7kadgxfr1qa" path="res://Assets/atari_mob.png" id="4_gwsye"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_t1cff"]
 a = Vector2(0, 34)
@@ -17,6 +19,7 @@ b = Vector2(0, 480)
 b = Vector2(0, 480)
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_5bswj")
 
 [node name="Background" type="TileMapLayer" parent="."]
 position = Vector2(288, 176)
@@ -50,11 +53,53 @@ collision_layer = 2
 position = Vector2(640, 0)
 shape = SubResource("SegmentShape2D_wy6pr")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="Points" type="RichTextLabel" parent="."]
 offset_left = 320.0
 offset_top = 8.0
 offset_right = 512.0
 offset_bottom = 40.0
+theme_override_fonts/normal_font = ExtResource("2_qtmtf")
 bbcode_enabled = true
 autowrap_mode = 0
-script = ExtResource("2_pbpw3")
+
+[node name="Violet0" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(40, 48)
+texture = ExtResource("4_gwsye")
+region_enabled = true
+region_rect = Rect2(0, 6.91789, 16.1405, 16.2023)
+
+[node name="Violet1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(64, 48)
+texture = ExtResource("4_gwsye")
+region_enabled = true
+region_rect = Rect2(0, 6.85402, 16.373, 16.2667)
+
+[node name="Violet2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(88, 48)
+texture = ExtResource("4_gwsye")
+region_enabled = true
+region_rect = Rect2(0, 6.8896, 16.1726, 16.1916)
+
+[node name="Violet3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(112, 48)
+texture = ExtResource("4_gwsye")
+region_enabled = true
+region_rect = Rect2(0, 6.90415, 16.0931, 16.1579)
+
+[node name="Violet4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(136, 48)
+texture = ExtResource("4_gwsye")
+region_enabled = true
+region_rect = Rect2(0, 6.84673, 16.1358, 16.2264)
+
+[node name="Violet5" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(160, 48)
+texture = ExtResource("4_gwsye")
+region_enabled = true
+region_rect = Rect2(0, 6.86114, 16.1976, 16.2401)
