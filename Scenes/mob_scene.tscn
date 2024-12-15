@@ -39,9 +39,9 @@ one_shot = true
 script = ExtResource("6_r4g80")
 
 [node name="Marker2D_up" type="Marker2D" parent="."]
-position = Vector2(0, 112)
+position = Vector2(0, 64)
 
 [node name="Marker2D_down" type="Marker2D" parent="."]
-position = Vector2(0, 448)
+position = Vector2(0, 192)
 
 [connection signal="timeout" from="StateMachine/Idle/Timer" to="StateMachine/Idle" method="OnMobSceneTimerTrigger"]
