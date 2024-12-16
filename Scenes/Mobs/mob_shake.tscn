@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://x7kadgxfr1qa" path="res://Assets/atari_mob.png" id="1_06js3"]
 [ext_resource type="Script" path="res://Scripts/Mob.cs" id="1_58qtw"]
 [ext_resource type="Script" path="res://Scripts/StateMachine/Base/StateMachine.cs" id="3_35x8e"]
-[ext_resource type="Script" path="res://Scripts/StateMachine/Base/MoveState.cs" id="4_mycps"]
-[ext_resource type="Script" path="res://Scripts/StateMachine/EatShakeState.cs" id="5_4ibsj"]
+[ext_resource type="Script" path="res://Scripts/StateMachine/Mobs/MoveState.cs" id="4_mycps"]
+[ext_resource type="Script" path="res://Scripts/StateMachine/Mobs/EatShakeState.cs" id="5_4ibsj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m5i6o"]
 size = Vector2(16, 16)

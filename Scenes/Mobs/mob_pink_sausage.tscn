@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Scripts/Mob.cs" id="1_c021i"]
 [ext_resource type="Texture2D" uid="uid://x7kadgxfr1qa" path="res://Assets/atari_mob.png" id="1_mjs7h"]
 [ext_resource type="Script" path="res://Scripts/StateMachine/Base/StateMachine.cs" id="3_onthm"]
-[ext_resource type="Script" path="res://Scripts/StateMachine/Base/MoveState.cs" id="4_s7avy"]
-[ext_resource type="Script" path="res://Scripts/StateMachine/EatPinkSausageState.cs" id="5_m07tv"]
+[ext_resource type="Script" path="res://Scripts/StateMachine/Mobs/MoveState.cs" id="4_s7avy"]
+[ext_resource type="Script" path="res://Scripts/StateMachine/Mobs/EatPinkSausageState.cs" id="5_m07tv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7hglm"]
 radius = 6.69239
