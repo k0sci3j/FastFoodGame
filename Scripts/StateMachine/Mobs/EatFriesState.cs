@@ -6,6 +6,6 @@ public partial class EatFriesState : EatenState
 	public override void StateStart()
     {
         base.StateStart();
-        RootNode.GetParent<MobScene>().Points+=10;
+        RootNode.GetParent<MobScene>().GetParent<Level>().Points+=10;
     }
 }

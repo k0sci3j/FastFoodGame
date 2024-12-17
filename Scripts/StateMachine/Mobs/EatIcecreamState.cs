@@ -6,6 +6,6 @@ public partial class EatIcecreamState : EatenState
 	public override void StateStart()
     {
         base.StateStart();
-        RootNode.GetParent<MobScene>().Points+=7;
+        RootNode.GetParent<MobScene>().GetParent<Level>().Points+=7;
     }
 }

@@ -1,39 +1,40 @@
 using Godot;
 using System;
 
-public partial class Points : Node2D
+public partial class Level : Node2D
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
-
+	[Signal]
+	public delegate void GameOverEventHandler();
+	[Signal]
+	public delegate void NextLevelEventHandler();
+	public int Points=0;
+	public int SickPoints=0;
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		MobScene scene = GetParent().GetNode<MobScene>("MobScene");
-		GetNode<RichTextLabel>("Points").Text = "[color=red]"+scene.Points+"[/color]";
-		if(scene.SickPoints>=1)
+		GetNode<RichTextLabel>("Points").Text = "[color=red]"+Points+"[/color]";
+		if(SickPoints>=1)
 		{
 			GetNode<Sprite2D>("Violet0").Visible = true;
+			EmitSignal(nameof(SignalName.GameOver));
 		}
-		if(scene.SickPoints>=2)
+		if(SickPoints>=2)
 		{
 			GetNode<Sprite2D>("Violet1").Visible = true;
 		}
-		if(scene.SickPoints>=3)
+		if(SickPoints>=3)
 		{
 			GetNode<Sprite2D>("Violet2").Visible = true;
 		}
-		if(scene.SickPoints>=4)
+		if(SickPoints>=4)
 		{
 			GetNode<Sprite2D>("Violet3").Visible = true;
 		}
-		if(scene.SickPoints>=5)
+		if(SickPoints>=5)
 		{
 			GetNode<Sprite2D>("Violet4").Visible = true;
 		}
-		if(scene.SickPoints>=6)
+		if(SickPoints>=6)
 		{
 			GetNode<Sprite2D>("Violet5").Visible = true;
 		}
