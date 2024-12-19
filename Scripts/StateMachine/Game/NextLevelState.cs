@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class OverState : State
+public partial class NextLevelState : State
 {
     Node scene;
 	public override void StateStart()
@@ -9,13 +9,13 @@ public partial class OverState : State
         base.StateStart();
         scene = GetTree().CurrentScene.GetNode<Level>("Level");
         RootNode.RemoveChild(scene);
-        RootNode.GetNode<Node2D>("Animation").GetNode<AnimationPlayer>("AnimationPlayer").Play("burp");
+        RootNode.GetNode<Node2D>("Animation").GetNode<AnimationPlayer>("AnimationPlayer").Play("fatter");
     }
 
-    public void OnAnimationBurpAnimationEnded()
+    public void OnAnimationFatterAnimationEnded()
 	{
+        // TODO: Add Mobs Speed increase and Spawn Timer increase if needed
         RootNode.AddChild(scene);
-        GetTree().ReloadCurrentScene();
         fsm.ChangeTo("LevelState");
 	}
 }

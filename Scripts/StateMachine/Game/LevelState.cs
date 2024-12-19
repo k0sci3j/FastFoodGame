@@ -6,6 +6,9 @@ public partial class LevelState : State
 	public void OnLevelGameOver()
 	{
 		fsm.ChangeTo("OverState");
-		QueueFree();
+	}
+	public void OnLevelNextLevel()
+	{
+		fsm.ChangeTo("NextLevelState");
 	}
 }
