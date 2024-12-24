@@ -14,10 +14,10 @@ public partial class NextLevelState : State
 
     public void OnAnimationFatterAnimationEnded()
 	{
+        GameVariables.Instance.CurrentLevel+=1;
         RootNode.AddChild(scene);
         double wait = GetTree().CurrentScene.GetNode<Level>("Level").GetNode<MobScene>("MobScene").GetNode<StateMachine>("StateMachine").GetNode<MobSceneIdleState>("Idle").GetNode<Timer>("Timer").WaitTime*100;
         GetTree().CurrentScene.GetNode<Level>("Level").GetNode<MobScene>("MobScene").GetNode<StateMachine>("StateMachine").GetNode<MobSceneIdleState>("Idle").GetNode<Timer>("Timer").WaitTime = (wait-2)/100;
-        GD.Print(GetTree().CurrentScene.GetNode<Level>("Level").GetNode<MobScene>("MobScene").GetChildren());
         fsm.ChangeTo("LevelState");
 	}
 }

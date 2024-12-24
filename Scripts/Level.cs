@@ -14,6 +14,7 @@ public partial class Level : Node2D
 	public override void _Process(double delta)
 	{
 		GetNode<RichTextLabel>("Points").Text = "[color=red]"+Points+"[/color]";
+		GetNode<RichTextLabel>("Lvl").Text = "[color=red]"+GameVariables.Instance.CurrentLevel+"[/color]";
 		if((Points/100-LastPoints/100)==1)
 		{
 			EmitSignal(nameof(SignalName.NextLevel));
