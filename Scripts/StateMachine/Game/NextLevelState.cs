@@ -14,8 +14,10 @@ public partial class NextLevelState : State
 
     public void OnAnimationFatterAnimationEnded()
 	{
-        // TODO: Add Mobs Speed increase and Spawn Timer increase if needed
         RootNode.AddChild(scene);
+        double wait = GetTree().CurrentScene.GetNode<Level>("Level").GetNode<MobScene>("MobScene").GetNode<StateMachine>("StateMachine").GetNode<MobSceneIdleState>("Idle").GetNode<Timer>("Timer").WaitTime*100;
+        GetTree().CurrentScene.GetNode<Level>("Level").GetNode<MobScene>("MobScene").GetNode<StateMachine>("StateMachine").GetNode<MobSceneIdleState>("Idle").GetNode<Timer>("Timer").WaitTime = (wait-2)/100;
+        GD.Print(GetTree().CurrentScene.GetNode<Level>("Level").GetNode<MobScene>("MobScene").GetChildren());
         fsm.ChangeTo("LevelState");
 	}
 }
