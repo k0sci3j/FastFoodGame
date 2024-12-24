@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8tl65u1lsrbn"]
+[gd_scene load_steps=7 format=3 uid="uid://b8tl65u1lsrbn"]
 
 [ext_resource type="PackedScene" uid="uid://ddj3ah4b3p32d" path="res://Scenes/level.tscn" id="1_mnvtn"]
 [ext_resource type="Script" path="res://Scripts/StateMachine/Base/StateMachine.cs" id="4_c63bm"]
 [ext_resource type="PackedScene" uid="uid://3ab22s8hjbi6" path="res://Scenes/animation.tscn" id="4_eihka"]
-[ext_resource type="Script" path="res://Scripts/StateMachine/Game/StartState.cs" id="6_sx8xa"]
 [ext_resource type="Script" path="res://Scripts/StateMachine/Game/LevelState.cs" id="7_easyb"]
 [ext_resource type="Script" path="res://Scripts/StateMachine/Game/NextLevelState.cs" id="7_uwovu"]
 [ext_resource type="Script" path="res://Scripts/StateMachine/Game/OverState.cs" id="8_gq6op"]
@@ -16,11 +15,8 @@
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("RootNode")]
 script = ExtResource("4_c63bm")
-InitialState = NodePath("StartState")
+InitialState = NodePath("LevelState")
 RootNode = NodePath("..")
-
-[node name="StartState" type="Node" parent="StateMachine"]
-script = ExtResource("6_sx8xa")
 
 [node name="LevelState" type="Node" parent="StateMachine"]
 script = ExtResource("7_easyb")

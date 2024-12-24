@@ -3,7 +3,11 @@ using System;
 
 public partial class LevelState : State
 {
-	public void OnLevelGameOver()
+	public override void StateStart()
+	{
+		base.StateStart();
+	}
+    public void OnLevelGameOver()
 	{
 		fsm.ChangeTo("OverState");
 	}

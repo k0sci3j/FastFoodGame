@@ -12,9 +12,13 @@ config_version=5
 
 config/name="FastFood"
 config/description="Atari 2600 Fast Food remake"
-run/main_scene="res://Scenes/game.tscn"
+run/main_scene="res://Scenes/start.tscn"
 config/features=PackedStringArray("4.3", "C#", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameVariables="*res://Scripts/GameVariables.cs"
 
 [display]
 

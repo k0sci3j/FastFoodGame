@@ -8,14 +8,14 @@ public partial class OverState : State
     {
         base.StateStart();
         scene = GetTree().CurrentScene.GetNode<Level>("Level");
+        GameVariables.Instance.LastPoints = ((Level)scene).Points;
         RootNode.RemoveChild(scene);
         RootNode.GetNode<Node2D>("Animation").GetNode<AnimationPlayer>("AnimationPlayer").Play("burp");
     }
 
     public void OnAnimationBurpAnimationEnded()
 	{
-        RootNode.AddChild(scene);
-        GetTree().ReloadCurrentScene();
-        fsm.ChangeTo("LevelState");
+        PackedScene score = GD.Load<PackedScene>("res://Scenes/start.tscn");
+        GetTree().ChangeSceneToPacked(score);
 	}
 }

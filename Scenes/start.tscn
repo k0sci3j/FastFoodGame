@@ -1,0 +1,87 @@
+[gd_scene load_steps=20 format=4 uid="uid://bwtfukg3kx8ky"]
+
+[ext_resource type="TileSet" uid="uid://dmwwjw33j1to3" path="res://Assets/level.tres" id="1_22a0b"]
+[ext_resource type="Script" path="res://Scripts/Start.cs" id="1_x330n"]
+[ext_resource type="PackedScene" uid="uid://bc2gnbw6c73ll" path="res://Scenes/mob_scene.tscn" id="2_1pana"]
+[ext_resource type="PackedScene" uid="uid://bubj336yhaqtx" path="res://Scenes/Mobs/mob_violet_sausage.tscn" id="3_1xea6"]
+[ext_resource type="FontFile" uid="uid://cia1rdumge1h3" path="res://Assets/Retroscape.ttf" id="3_4cvp1"]
+[ext_resource type="PackedScene" uid="uid://c12wqw3u4owpx" path="res://Scenes/Mobs/mob_beer.tscn" id="4_x14bv"]
+[ext_resource type="Texture2D" uid="uid://x7kadgxfr1qa" path="res://Assets/atari_mob.png" id="4_y81ip"]
+[ext_resource type="PackedScene" uid="uid://dy5iqwfb21a7i" path="res://Scenes/Mobs/mob_cheeseburger.tscn" id="5_fhec7"]
+[ext_resource type="PackedScene" uid="uid://qsekubp1j6vb" path="res://Scenes/Mobs/mob_cola.tscn" id="6_nwrwb"]
+[ext_resource type="PackedScene" uid="uid://vpdsx31e6u1l" path="res://Scenes/Mobs/mob_fries.tscn" id="7_bjutf"]
+[ext_resource type="PackedScene" uid="uid://8wdnpkuqi6lv" path="res://Scenes/Mobs/mob_green_sausage.tscn" id="8_eyusi"]
+[ext_resource type="PackedScene" uid="uid://caar4nntq8lpf" path="res://Scenes/Mobs/mob_hamburger.tscn" id="9_woa8b"]
+[ext_resource type="PackedScene" uid="uid://dy5ekbnxtpcvp" path="res://Scenes/Mobs/mob_hot_dog.tscn" id="10_h1mbd"]
+[ext_resource type="PackedScene" uid="uid://dd4e3w3wuuca" path="res://Scenes/Mobs/mob_icecream.tscn" id="11_ro4ho"]
+[ext_resource type="PackedScene" uid="uid://8yt3rgjkqvwq" path="res://Scenes/Mobs/mob_pink_sausage.tscn" id="12_tqt3y"]
+[ext_resource type="PackedScene" uid="uid://dx1rd0tvvu5so" path="res://Scenes/Mobs/mob_pizza.tscn" id="13_x8ike"]
+[ext_resource type="PackedScene" uid="uid://cf4oi5j1eogsd" path="res://Scenes/Mobs/mob_shake.tscn" id="14_sxagd"]
+[ext_resource type="PackedScene" uid="uid://d3fim2djo5the" path="res://Scenes/Mobs/mob_soda.tscn" id="15_guxbv"]
+[ext_resource type="PackedScene" uid="uid://ce2rsd6guw0av" path="res://Scenes/Mobs/mob_waffle_icecream.tscn" id="16_yu2ls"]
+
+[node name="Start" type="Node2D"]
+script = ExtResource("1_x330n")
+
+[node name="Background" type="TileMapLayer" parent="."]
+position = Vector2(288, 176)
+tile_map_data = PackedByteArray("AAD6//v/AAABAAAAAAD7//v/AAABAAAAAAD8//v/AAABAAAAAAD9//v/AAABAAAAAAD+//v/AAABAAAAAAD///v/AAABAAAAAAAAAPv/AAABAAAAAAABAPv/AAABAAAAAAD3/wMAAAABAAAAAAD3/wIAAAABAAAAAAD3/wEAAAABAAAAAAD3/wAAAAABAAAAAAD3////AAABAAAAAAD3//7/AAABAAAAAAD3//3/AAABAAAAAAD4//z/AAABAAAAAAD5//z/AAABAAAAAAD6//z/AAABAAAAAAD7//z/AAABAAAAAAD8//z/AAABAAAAAAD9//z/AAABAAAAAAD+//z/AAABAAAAAAD///z/AAABAAAAAAAAAPz/AAABAAAAAAABAPz/AAABAAAAAAABAAMAAAABAAAAAAAAAAMAAAABAAAAAAD//wMAAAABAAAAAAD+/wMAAAABAAAAAAD9/wMAAAABAAAAAAD8/wMAAAABAAAAAAD7/wMAAAABAAAAAAD6/wMAAAABAAAAAAD5/wMAAAABAAAAAAD4/wMAAAABAAAAAAD4/wIAAAABAAAAAAD4/wEAAAABAAAAAAD4/wAAAAABAAAAAAD4////AAABAAAAAAD4//7/AAABAAAAAAD4//3/AAABAAAAAAD5//3/AAABAAAAAAD6//3/AAABAAAAAAD7//3/AAABAAAAAAD8//3/AAABAAAAAAD9//3/AAABAAAAAAD+//3/AAABAAAAAAD///3/AAABAAAAAAAAAP3/AAABAAAAAAABAP3/AAABAAAAAAABAAIAAAABAAAAAAAAAAIAAAABAAAAAAD//wIAAAABAAAAAAD+/wIAAAABAAAAAAD9/wIAAAABAAAAAAD8/wIAAAABAAAAAAD7/wIAAAABAAAAAAD6/wIAAAABAAAAAAD5/wIAAAABAAAAAAD5/wEAAAABAAAAAAD5/wAAAAABAAAAAAD5////AAABAAAAAAD5//7/AAABAAAAAAD6//7/AAABAAAAAAD7//7/AAABAAAAAAD8//7/AAABAAAAAAD9//7/AAABAAAAAAD+//7/AAABAAAAAAD///7/AAABAAAAAAAAAP7/AAABAAAAAAABAP7/AAABAAAAAAABAAEAAAABAAAAAAABAAAAAAABAAAAAAABAP//AAABAAAAAAAAAAAAAAABAAAAAAAAAAEAAAABAAAAAAAAAP//AAABAAAAAAD/////AAABAAAAAAD//wAAAAABAAAAAAD//wEAAAABAAAAAAD+////AAABAAAAAAD+/wAAAAABAAAAAAD+/wEAAAABAAAAAAD9/wAAAAABAAAAAAD9////AAABAAAAAAD8/wAAAAABAAAAAAD8/wEAAAABAAAAAAD8////AAABAAAAAAD9/wEAAAABAAAAAAD7/wEAAAABAAAAAAD6/wEAAAABAAAAAAD6/wAAAAABAAAAAAD7/wAAAAABAAAAAAD7////AAABAAAAAAD6////AAABAAAAAAD3//z/AAABAAAAAAD5//v/AAABAAAAAAD4//v/AAABAAAAAAD3//v/AAABAAAAAADu//b/AAABAAAAAADv//b/AAABAAAAAADw//b/AAABAAAAAADx//b/AAABAAAAAADy//b/AAABAAAAAADz//b/AAABAAAAAAD0//b/AAABAAAAAAD1//b/AAABAAAAAAD2//b/AAABAAAAAAD3//b/AAABAAAAAAD4//b/AAABAAAAAAD5//b/AAABAAAAAAD6//b/AAABAAAAAAD7//b/AAABAAAAAAD8//b/AAABAAAAAAD9//b/AAABAAAAAAD+//b/AAABAAAAAAD///b/AAABAAAAAAAAAPb/AAABAAAAAAABAPb/AAABAAAAAADu/wMAAAABAAAAAADu/wIAAAABAAAAAADu/wEAAAABAAAAAADu/wAAAAABAAAAAADu////AAABAAAAAADu//7/AAABAAAAAADu//3/AAABAAAAAADu//z/AAABAAAAAADu//v/AAABAAAAAADu//r/AAABAAAAAADu//j/AAABAAAAAADu//f/AAAAAAAAAAABAPr/AAABAAAAAAAAAPr/AAABAAAAAAD///r/AAABAAAAAAD+//r/AAABAAAAAAD9//r/AAABAAAAAAD8//r/AAABAAAAAAD7//r/AAABAAAAAAD6//r/AAABAAAAAAD5//r/AAABAAAAAAD4//r/AAABAAAAAAD3//r/AAABAAAAAAD2//r/AAABAAAAAAD1//r/AAABAAAAAAD0//r/AAABAAAAAADz//r/AAABAAAAAADy//r/AAABAAAAAADx//r/AAABAAAAAADw//r/AAABAAAAAADv//r/AAABAAAAAADv//j/AAABAAAAAADv//f/AAAAAAAAAADw//f/AAAAAAAAAADx//f/AAAAAAAAAADy//f/AAAAAAAAAADz//f/AAAAAAAAAAD0//f/AAAAAAAAAAD1//f/AAAAAAAAAAD2//f/AAAAAAAAAAD3//f/AAAAAAAAAAD4//f/AAAAAAAAAAD5//f/AAAAAAAAAAD6//f/AAAAAAAAAAD7//f/AAAAAAAAAAD8//f/AAAAAAAAAAD9//f/AAAAAAAAAAD+//f/AAAAAAAAAAD///f/AAAAAAAAAAAAAPf/AAAAAAAAAAABAPf/AAAAAAAAAAABAPn/AAABAAAAAAAAAPn/AAABAAAAAAD///n/AAABAAAAAAD+//n/AAABAAAAAAD9//n/AAABAAAAAAD8//n/AAABAAAAAAD7//n/AAABAAAAAAD6//n/AAABAAAAAAD5//n/AAABAAAAAAD4//n/AAABAAAAAAD3//n/AAABAAAAAAD2//n/AAABAAAAAAD1//n/AAABAAAAAAD0//n/AAABAAAAAADz//n/AAABAAAAAADy//n/AAABAAAAAADx//n/AAABAAAAAADw//n/AAABAAAAAADw//j/AAABAAAAAADz//j/AAABAAAAAAD0//j/AAABAAAAAAD1//j/AAABAAAAAAD2//j/AAABAAAAAAD3//j/AAABAAAAAAD4//j/AAABAAAAAAD5//j/AAABAAAAAAD6//j/AAABAAAAAAD7//j/AAABAAAAAAD8//j/AAABAAAAAAD9//j/AAABAAAAAAD+//j/AAABAAAAAAD///j/AAABAAAAAAAAAPj/AAABAAAAAAABAPj/AAABAAAAAADy//j/AAABAAAAAAD2//v/AAABAAAAAAD2//z/AAABAAAAAAD2//3/AAABAAAAAAD2//7/AAABAAAAAAD2////AAABAAAAAAD2/wAAAAABAAAAAAD2/wEAAAABAAAAAAD2/wIAAAABAAAAAAD2/wMAAAABAAAAAADv/wMAAAABAAAAAADv/wIAAAABAAAAAADv/wEAAAABAAAAAADv/wAAAAABAAAAAADv////AAABAAAAAADv//7/AAABAAAAAADv//3/AAABAAAAAADv//z/AAABAAAAAADv//v/AAABAAAAAADw//v/AAABAAAAAADx//v/AAABAAAAAADy//v/AAABAAAAAADz//v/AAABAAAAAAD0//v/AAABAAAAAAD1//v/AAABAAAAAAD1//z/AAABAAAAAAD1//3/AAABAAAAAAD1//7/AAABAAAAAAD1////AAABAAAAAAD1/wAAAAABAAAAAAD1/wEAAAABAAAAAAD1/wIAAAABAAAAAAD1/wMAAAABAAAAAADw/wMAAAABAAAAAADw/wIAAAABAAAAAADw/wEAAAABAAAAAADw/wAAAAABAAAAAADw////AAABAAAAAADw//7/AAABAAAAAADw//3/AAABAAAAAADw//z/AAABAAAAAADx//z/AAABAAAAAADy//z/AAABAAAAAADz//z/AAABAAAAAAD0//z/AAABAAAAAAD0//3/AAABAAAAAAD0//7/AAABAAAAAAD0////AAABAAAAAAD0/wAAAAABAAAAAAD0/wEAAAABAAAAAAD0/wIAAAABAAAAAAD0/wMAAAABAAAAAADx/wMAAAABAAAAAADx/wIAAAABAAAAAADx/wEAAAABAAAAAADx/wAAAAABAAAAAADx////AAABAAAAAADx//7/AAABAAAAAADx//3/AAABAAAAAADy//3/AAABAAAAAADy//7/AAABAAAAAADy////AAABAAAAAADy/wAAAAABAAAAAADy/wEAAAABAAAAAADy/wIAAAABAAAAAADy/wMAAAABAAAAAADz/wMAAAABAAAAAADz/wIAAAABAAAAAADz/wEAAAABAAAAAADz/wAAAAABAAAAAADz////AAABAAAAAADz//7/AAABAAAAAADz//3/AAABAAAAAADv//n/AAABAAAAAADu//n/AAABAAAAAAABAPX/AAABAAAAAAAAAPX/AAABAAAAAAD///X/AAABAAAAAAD+//X/AAABAAAAAAD9//X/AAABAAAAAAD8//X/AAABAAAAAAD7//X/AAABAAAAAAD6//X/AAABAAAAAAD5//X/AAABAAAAAAD4//X/AAABAAAAAAD3//X/AAABAAAAAAD2//X/AAABAAAAAAD1//X/AAABAAAAAAD0//X/AAABAAAAAADz//X/AAABAAAAAADy//X/AAABAAAAAADx//X/AAABAAAAAADw//X/AAABAAAAAADv//X/AAABAAAAAADu//X/AAABAAAAAADx//j/AAABAAAAAAA=")
+tile_set = ExtResource("1_22a0b")
+
+[node name="MobScene" parent="." instance=ExtResource("2_1pana")]
+MobScenes = Array[PackedScene]([ExtResource("3_1xea6"), ExtResource("4_x14bv"), ExtResource("5_fhec7"), ExtResource("6_nwrwb"), ExtResource("7_bjutf"), ExtResource("8_eyusi"), ExtResource("9_woa8b"), ExtResource("10_h1mbd"), ExtResource("11_ro4ho"), ExtResource("12_tqt3y"), ExtResource("13_x8ike"), ExtResource("14_sxagd"), ExtResource("15_guxbv"), ExtResource("16_yu2ls")])
+
+[node name="Press" type="RichTextLabel" parent="."]
+offset_left = 56.0
+offset_top = 120.0
+offset_right = 264.0
+offset_bottom = 146.0
+theme_override_colors/default_color = Color(0.670588, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_4cvp1")
+text = "PRESS ANY KEY"
+
+[node name="Points" type="RichTextLabel" parent="."]
+offset_left = 192.0
+offset_right = 320.0
+offset_bottom = 24.0
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_4cvp1")
+theme_override_font_sizes/normal_font_size = 0
+bbcode_enabled = true
+autowrap_mode = 0
+
+[node name="Violet0" type="Sprite2D" parent="."]
+position = Vector2(40, 32)
+texture = ExtResource("4_y81ip")
+region_enabled = true
+region_rect = Rect2(0, 6.91789, 16.1405, 16.2023)
+
+[node name="Violet1" type="Sprite2D" parent="."]
+position = Vector2(64, 32)
+texture = ExtResource("4_y81ip")
+region_enabled = true
+region_rect = Rect2(0, 6.85402, 16.373, 16.2667)
+
+[node name="Violet2" type="Sprite2D" parent="."]
+position = Vector2(88, 32)
+texture = ExtResource("4_y81ip")
+region_enabled = true
+region_rect = Rect2(0, 6.8896, 16.1726, 16.1916)
+
+[node name="Violet3" type="Sprite2D" parent="."]
+position = Vector2(112, 32)
+texture = ExtResource("4_y81ip")
+region_enabled = true
+region_rect = Rect2(0, 6.90415, 16.0931, 16.1579)
+
+[node name="Violet4" type="Sprite2D" parent="."]
+position = Vector2(136, 32)
+texture = ExtResource("4_y81ip")
+region_enabled = true
+region_rect = Rect2(0, 6.84673, 16.1358, 16.2264)
+
+[node name="Violet5" type="Sprite2D" parent="."]
+position = Vector2(160, 32)
+texture = ExtResource("4_y81ip")
+region_enabled = true
+region_rect = Rect2(0, 6.86114, 16.1976, 16.2401)
