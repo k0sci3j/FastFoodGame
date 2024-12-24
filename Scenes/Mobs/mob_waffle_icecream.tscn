@@ -39,3 +39,4 @@ position = Vector2(0.5, -1.19209e-07)
 scale = Vector2(0.75, 1.2)
 
 [connection signal="body_entered" from="EatZone" to="StateMachine/MoveState" method="OnEatZoneBodyEntered"]
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="OnVisibleOnScreenEnabler2dScreenExited"]
