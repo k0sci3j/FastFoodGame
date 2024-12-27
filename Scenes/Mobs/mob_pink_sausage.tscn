@@ -12,7 +12,7 @@ height = 20.5847
 
 [node name="MobPinkSausage" type="Node2D"]
 script = ExtResource("1_c021i")
-Speed = 50.0
+Speed = 200.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_mjs7h")
