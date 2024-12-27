@@ -14,7 +14,7 @@ config/name="FastFood"
 config/description="Atari 2600 Fast Food remake"
 run/main_scene="res://Scenes/start.tscn"
 config/features=PackedStringArray("4.3", "C#", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://Assets/icon.png"
 
 [autoload]
 
@@ -24,6 +24,7 @@ GameVariables="*res://Scripts/GameVariables.cs"
 
 window/size/viewport_width=320
 window/size/viewport_height=240
+window/size/mode=2
 window/size/initial_position_type=0
 window/stretch/mode="canvas_items"
 
