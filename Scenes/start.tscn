@@ -1,24 +1,10 @@
-[gd_scene load_steps=20 format=4 uid="uid://bwtfukg3kx8ky"]
+[gd_scene load_steps=6 format=4 uid="uid://bwtfukg3kx8ky"]
 
 [ext_resource type="TileSet" uid="uid://dmwwjw33j1to3" path="res://Assets/level.tres" id="1_22a0b"]
 [ext_resource type="Script" path="res://Scripts/Start.cs" id="1_x330n"]
 [ext_resource type="PackedScene" uid="uid://bc2gnbw6c73ll" path="res://Scenes/mob_scene.tscn" id="2_1pana"]
-[ext_resource type="PackedScene" uid="uid://bubj336yhaqtx" path="res://Scenes/Mobs/mob_violet_sausage.tscn" id="3_1xea6"]
 [ext_resource type="FontFile" uid="uid://cia1rdumge1h3" path="res://Assets/Retroscape.ttf" id="3_4cvp1"]
-[ext_resource type="PackedScene" uid="uid://c12wqw3u4owpx" path="res://Scenes/Mobs/mob_beer.tscn" id="4_x14bv"]
 [ext_resource type="Texture2D" uid="uid://x7kadgxfr1qa" path="res://Assets/atari_mob.png" id="4_y81ip"]
-[ext_resource type="PackedScene" uid="uid://dy5iqwfb21a7i" path="res://Scenes/Mobs/mob_cheeseburger.tscn" id="5_fhec7"]
-[ext_resource type="PackedScene" uid="uid://qsekubp1j6vb" path="res://Scenes/Mobs/mob_cola.tscn" id="6_nwrwb"]
-[ext_resource type="PackedScene" uid="uid://vpdsx31e6u1l" path="res://Scenes/Mobs/mob_fries.tscn" id="7_bjutf"]
-[ext_resource type="PackedScene" uid="uid://8wdnpkuqi6lv" path="res://Scenes/Mobs/mob_green_sausage.tscn" id="8_eyusi"]
-[ext_resource type="PackedScene" uid="uid://caar4nntq8lpf" path="res://Scenes/Mobs/mob_hamburger.tscn" id="9_woa8b"]
-[ext_resource type="PackedScene" uid="uid://dy5ekbnxtpcvp" path="res://Scenes/Mobs/mob_hot_dog.tscn" id="10_h1mbd"]
-[ext_resource type="PackedScene" uid="uid://dd4e3w3wuuca" path="res://Scenes/Mobs/mob_icecream.tscn" id="11_ro4ho"]
-[ext_resource type="PackedScene" uid="uid://8yt3rgjkqvwq" path="res://Scenes/Mobs/mob_pink_sausage.tscn" id="12_tqt3y"]
-[ext_resource type="PackedScene" uid="uid://dx1rd0tvvu5so" path="res://Scenes/Mobs/mob_pizza.tscn" id="13_x8ike"]
-[ext_resource type="PackedScene" uid="uid://cf4oi5j1eogsd" path="res://Scenes/Mobs/mob_shake.tscn" id="14_sxagd"]
-[ext_resource type="PackedScene" uid="uid://d3fim2djo5the" path="res://Scenes/Mobs/mob_soda.tscn" id="15_guxbv"]
-[ext_resource type="PackedScene" uid="uid://ce2rsd6guw0av" path="res://Scenes/Mobs/mob_waffle_icecream.tscn" id="16_yu2ls"]
 
 [node name="Start" type="Node2D"]
 script = ExtResource("1_x330n")
@@ -29,7 +15,6 @@ tile_map_data = PackedByteArray("AAD6//v/AAABAAAAAAD7//v/AAABAAAAAAD8//v/AAABAAA
 tile_set = ExtResource("1_22a0b")
 
 [node name="MobScene" parent="." instance=ExtResource("2_1pana")]
-MobScenes = Array[PackedScene]([ExtResource("3_1xea6"), ExtResource("4_x14bv"), ExtResource("5_fhec7"), ExtResource("6_nwrwb"), ExtResource("7_bjutf"), ExtResource("8_eyusi"), ExtResource("9_woa8b"), ExtResource("10_h1mbd"), ExtResource("11_ro4ho"), ExtResource("12_tqt3y"), ExtResource("13_x8ike"), ExtResource("14_sxagd"), ExtResource("15_guxbv"), ExtResource("16_yu2ls")])
 
 [node name="Press" type="RichTextLabel" parent="."]
 offset_left = 56.0
