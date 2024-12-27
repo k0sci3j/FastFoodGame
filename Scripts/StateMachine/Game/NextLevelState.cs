@@ -10,6 +10,7 @@ public partial class NextLevelState : State
         scene = RootNode.GetNode<Level>("Level");
         RootNode.RemoveChild(scene);
         RootNode.GetNode<Node2D>("Animation").GetNode<AnimationPlayer>("AnimationPlayer").Play("fatter");
+        RootNode.GetNode<Node2D>("Animation").GetNode<AudioStreamPlayer2D>("FatterSound").Play();
     }
 
     public void OnAnimationFatterAnimationEnded()

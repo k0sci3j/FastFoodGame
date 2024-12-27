@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://ddj3ah4b3p32d"]
+[gd_scene load_steps=12 format=4 uid="uid://ddj3ah4b3p32d"]
 
 [ext_resource type="Script" path="res://Scripts/Level.cs" id="1_5bswj"]
 [ext_resource type="TileSet" uid="uid://dmwwjw33j1to3" path="res://Assets/level.tres" id="1_j8qke"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bc2gnbw6c73ll" path="res://Scenes/mob_scene.tscn" id="3_f5awy"]
 [ext_resource type="PackedScene" uid="uid://cpeilr6h1l4tk" path="res://Scenes/player.tscn" id="4_2yuw5"]
 [ext_resource type="Texture2D" uid="uid://x7kadgxfr1qa" path="res://Assets/atari_mob.png" id="4_gwsye"]
+[ext_resource type="AudioStream" uid="uid://1bpgsm27uyr6" path="res://Assets/Eat.mp3" id="7_ktt0l"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_t1cff"]
 a = Vector2(0, -206)
@@ -123,3 +124,6 @@ position = Vector2(160, 32)
 texture = ExtResource("4_gwsye")
 region_enabled = true
 region_rect = Rect2(0, 6.86114, 16.1976, 16.2401)
+
+[node name="EatSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_ktt0l")
