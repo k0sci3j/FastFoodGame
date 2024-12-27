@@ -17,6 +17,7 @@ tile_set = ExtResource("1_22a0b")
 [node name="MobScene" parent="." instance=ExtResource("2_1pana")]
 
 [node name="Press" type="RichTextLabel" parent="."]
+z_index = 10
 offset_left = 56.0
 offset_top = 120.0
 offset_right = 264.0
