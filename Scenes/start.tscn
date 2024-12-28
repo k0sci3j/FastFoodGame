@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://bwtfukg3kx8ky"]
+[gd_scene load_steps=7 format=4 uid="uid://bwtfukg3kx8ky"]
 
 [ext_resource type="TileSet" uid="uid://dmwwjw33j1to3" path="res://Assets/level.tres" id="1_22a0b"]
 [ext_resource type="Script" path="res://Scripts/Start.cs" id="1_x330n"]
 [ext_resource type="PackedScene" uid="uid://bc2gnbw6c73ll" path="res://Scenes/mob_scene.tscn" id="2_1pana"]
 [ext_resource type="FontFile" uid="uid://cia1rdumge1h3" path="res://Assets/Retroscape.ttf" id="3_4cvp1"]
 [ext_resource type="Texture2D" uid="uid://x7kadgxfr1qa" path="res://Assets/atari_mob.png" id="4_y81ip"]
+[ext_resource type="AudioStream" uid="uid://cuqpgks44dkyo" path="res://Assets/FastFood_start.mp3" id="6_1o6nt"]
 
 [node name="Start" type="Node2D"]
 script = ExtResource("1_x330n")
@@ -81,3 +82,7 @@ position = Vector2(160, 32)
 texture = ExtResource("4_y81ip")
 region_enabled = true
 region_rect = Rect2(0, 6.86114, 16.1976, 16.2401)
+
+[node name="StartSong" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_1o6nt")
+autoplay = true
