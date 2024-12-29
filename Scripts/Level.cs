@@ -7,7 +7,7 @@ public partial class Level : Node2D
 	public delegate void GameOverEventHandler();
 	[Signal]
 	public delegate void NextLevelEventHandler();
-	public int Points=0;
+	public int Points = 0;
 	private int LastPoints = 0;
 	public int SickPoints=0;
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
