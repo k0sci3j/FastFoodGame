@@ -1,6 +1,3 @@
-using Godot;
-using System;
-
 public partial class EatHamburgerState : EatenState
 {
 	public override void StateStart()

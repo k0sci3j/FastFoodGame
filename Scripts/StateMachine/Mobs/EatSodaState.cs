@@ -1,5 +1,3 @@
-using Godot;
-
 public partial class EatSodaState : EatenState
 {
 	public override void StateStart()
